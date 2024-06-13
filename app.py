@@ -11,12 +11,15 @@ import random
 
 def game():
     player_score = 0
+    computer_score = 0
     while True:
         player_choice = input("Enter rock, paper, or scissors: ")
         player_choice = player_choice.strip().lower()
         if player_choice == "quit":
             print("Your score is", player_score)
+            print("Computer score is", computer_score)
             player_score = 0
+            computer_score = 0
             break
         if player_choice not in ["rock", "paper", "scissors"]:
             print("Invalid input")
@@ -30,6 +33,7 @@ def game():
             player_score += 1
         else:
             print("You lose!")
+            computer_score += 1
     return player_score
 
 game()
